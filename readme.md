@@ -7,7 +7,6 @@ This tool automates the process of searching for job opportunities using Google'
 - Daily automated job searches for multiple job titles
 - Results saved to Google Sheets (separate sheet for each search query)
 - Automated email notifications with formatted results
-- Focus on remote job opportunities
 - Results restricted to the last 24 hours
 
 ## Prerequisites
@@ -24,6 +23,25 @@ This tool automates the process of searching for job opportunities using Google'
 2. Enable the Custom Search API
 3. Create API credentials (API Key)
 4. Set up a Custom Search Engine and note the Search Engine ID (cx)
+   
+   Add the following job board domains to your Custom Search Engine:
+   ```
+   *.metacareers.com/*
+   *.eightfold.ai/*
+   *.paylocity.com/*
+   my.workdayjobs.com/*
+   app.dover.io/*
+   *.wellfound.com/*
+   jobs.ashbyhq.com/*
+   *.lever.co/*
+   *.jobvite.com/*
+   *.greenhouse.io/*
+   ```
+   
+   These domains cover major job boards and company career pages. In your Custom Search Engine settings:
+   - Add each domain as a separate site to search
+   - Enable "Search only included sites"
+   - Enable "Search the entire web but emphasize included sites" if you want broader results
 
 ### 2. Script Configuration
 1. Replace the API key and Custom Search Engine ID in the `main()` function:
