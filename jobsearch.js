@@ -49,8 +49,9 @@ function sendEmail(emailAddress, dataByQuery) {
 }
 
 function main() {
-  var apiKey = "Your_API_Key";
-  var cseId = "your_cse_id";
+  var apiKey = process.env.GOOGLE_API_KEY || "YOUR_API_KEY";
+  var cseId = process.env.GOOGLE_CSE_ID || "YOUR_CSE_ID";
+  var emailAddress = process.env.NOTIFICATION_EMAIL || "YOUR_EMAIL@example.com";
   var searchQueries = [
     '"product operations" remote',
     '"Director of Program Management" remote',
@@ -83,5 +84,5 @@ function main() {
     }
   });
 
-  sendEmail("InsertYourEmail@gmail.com", dataByQuery); // Replace with your email address
+  sendEmail(emailAddress, dataByQuery);
 }
